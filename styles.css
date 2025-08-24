@@ -1,9 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Performance and Accessibility Optimized CSS */
+/* Will-change hints for performance */
+/* Focus management for accessibility */
+/* Modern CSS features for better performance */
 
+/* CSS Custom Properties with fallbacks */
 :root {
     --primary-green: #10b981;
     --dark-green: #047857;
@@ -18,35 +18,57 @@
     --shadow-lg: 0 20px 40px rgba(16, 185, 129, 0.15);
     --gradient-primary: linear-gradient(135deg, var(--primary-green), var(--accent-green));
     --gradient-bg: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+    
+    /* Performance variables */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Accessibility variables */
+    --focus-outline: 3px solid var(--primary-green);
+    --focus-offset: 2px;
+    --min-touch-target: 44px;
 }
 
+/* Performance optimizations */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Optimize paint and layout operations */
 body {
     font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background: var(--gradient-bg);
+    /* Performance optimizations */
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Typography with performance optimizations */
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Orbitron', monospace;
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
+    /* Performance optimizations */
+    text-rendering: optimizeLegibility;
 }
 
+/* Container with performance optimizations */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    /* Performance optimizations */
+    contain: layout style;
 }
 
-/* Header */
+/* Header with performance optimizations */
 header {
     position: fixed;
     top: 0;
@@ -55,7 +77,10 @@ header {
     backdrop-filter: blur(15px);
     z-index: 1000;
     box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
+    /* Performance optimizations */
+    will-change: transform, background-color;
+    contain: layout style;
 }
 
 nav {
@@ -73,6 +98,8 @@ nav {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    /* Performance optimizations */
+    will-change: transform;
 }
 
 .nav-links {
@@ -88,7 +115,75 @@ nav {
     font-weight: 500;
     position: relative;
     padding: 0.5rem 0;
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
+    /* Accessibility improvements */
+    min-height: var(--min-touch-target);
+    display: flex;
+    align-items: center;
+}
+
+/* Focus management for accessibility */
+.nav-links a:focus,
+.nav-links a:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-offset);
+    border-radius: 4px;
+}
+
+/* Performance-focused styles */
+.animate-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Optimize animations with will-change */
+.service-card,
+.gallery-item,
+.testimonial-card,
+.pricing-card,
+.process-step {
+    will-change: transform, opacity;
+    contain: layout style;
+}
+
+/* Optimize images for performance */
+img {
+    max-width: 100%;
+    height: auto;
+    /* Performance optimizations */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Lazy loading placeholder */
+img[loading="lazy"] {
+    background: var(--gray-100);
+    transition: opacity var(--transition-normal);
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Optimize transitions */
+.transition-optimized {
+    transition: all var(--transition-normal);
+    will-change: transform, opacity;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .hero {
+        will-change: auto;
+    }
 }
 
 .nav-links a.active,
@@ -126,7 +221,7 @@ nav {
     transform: scale(1.1);
 }
 
-/* Hero Section */
+/* Hero Section with Performance Optimizations */
 .hero {
     height: 100vh;
     display: flex;
@@ -137,6 +232,9 @@ nav {
     color: var(--text-dark);
     position: relative;
     overflow: hidden;
+    /* Performance optimizations */
+    will-change: background-position;
+    contain: layout style paint;
 }
 
 .hero::before {
