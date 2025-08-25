@@ -461,9 +461,6 @@ function openQuoteModal(serviceName) {
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="modal-title">Get Quote for ${serviceName}</h3>
-                <button class="modal-close" aria-label="Close modal">
-                    <i class="fas fa-times" aria-hidden="true"></i>
-                </button>
             </div>
             <div class="modal-body">
                 <p>Please contact us for a detailed quote for ${serviceName}.</p>

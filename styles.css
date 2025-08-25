@@ -92,7 +92,7 @@ nav {
 
 .logo {
     font-family: 'Orbitron', monospace;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 900;
     color: var(--primary-green);
     display: flex;
@@ -1269,6 +1269,10 @@ body:has(.mobile-nav.active) {
 
 /* Tablet Styles */
 @media (min-width: 768px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
     .nav-links {
         display: flex;
     }
@@ -1396,5 +1400,9 @@ body:has(.mobile-nav.active) {
         background: unset;
         background-color: gray;
         border: none;
+    }
+
+    .cta-button {
+        padding: 1rem 2rem;
     }
 }
