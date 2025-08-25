@@ -469,7 +469,7 @@ function openQuoteModal(serviceName) {
                 <p>Please contact us for a detailed quote for ${serviceName}.</p>
                 <div class="modal-actions">
                     <a href="#contact" class="cta-button">Contact Us</a>
-                    <button class="modal-close-btn">Close</button>
+                    <button class="modal-close-btn cta-button">Close</button>
                 </div>
             </div>
         </div>
@@ -500,6 +500,9 @@ function openQuoteModal(serviceName) {
         width: 90%;
         transform: scale(0.8);
         transition: transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     `;
     
     document.body.appendChild(modal);
@@ -521,7 +524,7 @@ function openQuoteModal(serviceName) {
         }, 300);
     };
     
-    modal.querySelectorAll('.modal-close, .modal-close-btn').forEach(btn => {
+    modal.querySelectorAll('.modal-close, .modal-close-btn, .cta-button').forEach(btn => {        
         btn.addEventListener('click', closeModal);
     });
     
@@ -539,6 +542,11 @@ function openQuoteModal(serviceName) {
         }
     });
 }
+
+// Current year
+const currentYear = new Date().getFullYear()
+
+document.querySelector('.footer-bottom p span').innerHTML = currentYear
 
 // Add CSS for animations
 const style = document.createElement('style');

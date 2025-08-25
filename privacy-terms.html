@@ -131,6 +131,7 @@
     
     <style>
         .legal-content {
+            background-color: red;
             padding: 8rem 0 4rem;
             background: var(--white);
         }
@@ -146,6 +147,7 @@
             margin-bottom: 3rem;
             padding-bottom: 2rem;
             border-bottom: 2px solid var(--gray-100);
+            position: static;
         }
 
         .legal-header h1 {
@@ -277,16 +279,27 @@
             padding: 2rem;
             border-radius: 15px;
             margin-bottom: 3rem;
+            display: block;
         }
 
         .table-of-contents h3 {
             color: var(--primary-green);
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
 
         .table-of-contents ul {
             list-style: none;
             padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+            width: 100%;
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
         }
 
         .table-of-contents li {
@@ -297,6 +310,10 @@
             color: var(--text-dark);
             text-decoration: none;
             transition: color 0.3s ease;
+            white-space: nowrap;
+            padding: 10px;
+            background-color: #10b98136;
+            border-radius: 8px;
         }
 
         .table-of-contents a:hover {

@@ -907,7 +907,7 @@ img[loading="lazy"].loaded {
 }
 
 .pricing-price {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 900;
     color: var(--primary-green);
     margin-bottom: 0.5rem;
@@ -1195,11 +1195,21 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
+    nav {
+        flex-direction: column;
+    }
 }
 
 .mobile-nav.active {
     display: flex;
 }
+
+/* Stop body scroll when nav active */
+body:has(.mobile-nav.active) {
+    overflow: hidden;
+}
+
 
 .mobile-nav a {
     font-family: 'Roboto', sans-serif;
@@ -1372,4 +1382,19 @@ footer {
 
 .visible {
     display: block;
+}
+
+.modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+
+    button {
+        background: unset;
+        background-color: gray;
+        border: none;
+    }
 }
