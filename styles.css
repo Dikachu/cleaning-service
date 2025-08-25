@@ -244,7 +244,7 @@ img[loading="lazy"].loaded {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0478576d;
+    background-color: #047857ee;
     /* background: radial-gradient(circle at 30% 70%, rgba(16, 185, 129, 0.1) 0%, transparent 50%); */
 }
 
@@ -256,7 +256,7 @@ img[loading="lazy"].loaded {
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 900;
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
@@ -265,7 +265,7 @@ img[loading="lazy"].loaded {
 
 .hero-content .subtitle {
     font-size: 1.3rem;
-    font-weight: 300;
+    font-weight: 900;
     margin-bottom: 1rem;
     opacity: 0.9;
 }
